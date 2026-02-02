@@ -4,10 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/css/styles.css">
-    <title>lab2_ramschema</title>
+    <title>LAB2_RAMSCHEMA</title>
   </head>
   <body>
-    <H1>LAB2</H1>
+    <div id="app">
+    <H1>Ramchema – Webbutveckling</H1>
+    <label for="search">Sök (kurskod eller namn)</label>
+    <input id="search" type="text" placeholder="Sök">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <button type="button" data-sort="code">Kurskod</button>
+          </th>
+          <th>
+            <button type="button" data-sort="coursename">Kursnamn</button>
+          </th>
+          <th>
+            <button type="button" data-sort="progression">Progression</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <p id="status"></p>
+    </div>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
