@@ -8,6 +8,7 @@ let allCourses = [];
 
 /* Hämtar element från DOM */
 const tbody = document.querySelector("#tbody");
+const searchInput = document.querySelector("#search");
 
 /* Asynkron funktion som hämtar kursdata från servern */
 async function fetchCourses() {
@@ -69,3 +70,23 @@ function renderCourses(courses) {
 
 /* Anropar funktionen när sidan laddas */
 fetchCourses()
+
+/* Eventlyssnare för sökfunktion, filtrerar tabellen medan användaren skriver */
+searchInput.addEventListener("input", (event) => {
+    /* Hämtar texten i inputfältet och gör den lättare att jämföra */
+    const searchTerm = event.target.value.toLowerCase().trim();
+
+    /* Skapar ny lista med kurser som matchar den inskrivna söktermen */
+    const filteredCourses = allCourses.filter((course) =>{
+        return (
+            course.code.toLowerCase().includes(searchTerm)||
+            course.coursename.toLowerCase().includes(searchTerm)
+        );
+    });
+
+    /* Kontroll: Visar sökterm och antal träffar */
+    console.log(`Din sökterm: "${searchTerm}" gav ${filteredCourses.length} träffar`);
+
+    /* Visar bara de filtrerade kurserna i tabellen */
+    renderCourses(filteredCourses);
+});
