@@ -6,6 +6,9 @@ const url = "https://webbutveckling.miun.se/files/ramschema.json";
 /*Array som ska hålla alla kurser med tillhörande data från JSON-filen */
 let allCourses = [];
 
+/* Array som ska hålla alla synliga kurser efter sök och sortering */
+let visibleCourses = [];
+
 let currentSortKey = null; /* Håller koll på vilken kolumn vi sorterar på */
 let currentSortDir = "asc"; /* Håller koll på riktning - "asc" eller "desc" */
 
@@ -14,6 +17,8 @@ const tbody = document.querySelector("#tbody");
 const searchInput = document.querySelector("#search");
 
 const sortButtons = document.querySelectorAll("button[data-sort]");
+
+
 
 /* Asynkron funktion som hämtar kursdata från servern */
 async function fetchCourses() {
@@ -28,8 +33,11 @@ async function fetchCourses() {
         /* Hämtad data sparas i variabeln allCourses */
         allCourses = data;
 
-        /* Skickar alla hämtade kurser till render-funktionen för visning */
-        renderCourses(allCourses);
+        /* Synliga kurser sätts initialt till alla hämtade kurser */
+        visibleCourses = allCourses;
+
+        /* Visar alla kurser i tabellen vid start */
+        renderCourses(visibleCourses);
 
         /* Fångar eventuella fel */
     } catch (error) {
@@ -90,13 +98,11 @@ function renderCourses(courses) {
         tbody.appendChild(tr);
 
     });
-
-    console.log(`Visar ${courses.length} kurser i tabellen`);
-
 }
 
 /* Anropar funktionen när sidan laddas */
 fetchCourses()
+
 
 /* Eventlyssnare för sökfunktion, filtrerar tabellen medan användaren skriver */
 searchInput.addEventListener("input", (event) => {
@@ -111,12 +117,14 @@ searchInput.addEventListener("input", (event) => {
         );
     });
 
-    /* Kontroll: Visar sökterm och antal träffar */
-    console.log(`Din sökterm: "${searchTerm}" gav ${filteredCourses.length} träffar`);
+    /* Uppdaterar vilka kurser som visas baserat på sökresultat */
+    visibleCourses = filteredCourses;
 
-    /* Visar bara de filtrerade kurserna i tabellen */
-    renderCourses(filteredCourses);
+    /* Visar endast de kurser som matchar sökningen */
+    renderCourses(visibleCourses);
+
 });
+
 
 
 /* Klick på knapp ovanför tabell sorterar tabellen */
@@ -134,9 +142,14 @@ sortButtons.forEach((button) => {
             currentSortDir = "asc";
         }
 
-        /* Sorterar och visar resultatet */
-        const sortedCourses = sortCourses(allCourses, currentSortKey, currentSortDir);
-        renderCourses(sortedCourses);
+        /* Sorterar endast de kurser som visas just nu */
+        const sortedCourses = sortCourses(visibleCourses, currentSortKey, currentSortDir);
+
+        /* Uppdaterar synliga kurser efter sortering */
+        visibleCourses = sortedCourses;
+
+        /* Visar den sorterade listan */
+        renderCourses(visibleCourses);
 
     });
 });
