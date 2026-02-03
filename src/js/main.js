@@ -15,6 +15,7 @@ let currentSortDir = "asc"; /* Håller koll på riktning - "asc" eller "desc" */
 /* Hämtar element från DOM */
 const tbody = document.querySelector("#tbody");
 const searchInput = document.querySelector("#search");
+const statusText = document.querySelector("#status");
 
 const sortButtons = document.querySelectorAll("button[data-sort]");
 
@@ -98,6 +99,8 @@ function renderCourses(courses) {
         tbody.appendChild(tr);
 
     });
+
+    statusText.textContent = `Visar ${courses.length} av ${allCourses.length} kurser.`;
 }
 
 /* Anropar funktionen när sidan laddas */
