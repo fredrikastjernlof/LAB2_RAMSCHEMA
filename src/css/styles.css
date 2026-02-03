@@ -1,3 +1,96 @@
-body{
-    background-color: cadetblue;
+/* Grundinställningar */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+/* Wrapper */
+#app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Header */
+header {
+  margin-bottom: 1.5rem;
+}
+
+
+h1 {
+  margin: 0 0 0.4rem 0;
+}
+
+#status {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Panel runt sök och tabell */
+.panel {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Sök */
+.controls {
+  margin-bottom: 0.75rem;
+}
+
+label {
+  display: block;
+  margin: 0 0 0.3rem 0.3rem;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 300px;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border: 1px solid #8d8d8d;
+  border-radius: 5px;
+}
+
+/* Tabell */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  padding: 0.5rem;
+}
+
+tbody td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover-effekt */
+tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Sorteringsknappar */
+th button {
+  all: unset;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+th button:hover {
+  text-decoration: underline;
 }
