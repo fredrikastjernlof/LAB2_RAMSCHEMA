@@ -6,7 +6,7 @@ const url = "https://webbutveckling.miun.se/files/ramschema.json";
 /*Array som ska hålla alla kurser med tillhörande data från JSON-filen */
 let allCourses = [];
 
-/* Hämtar <tbody> från DOM */
+/* Hämtar element från DOM */
 const tbody = document.querySelector("#tbody");
 
 /* Asynkron funktion som hämtar kursdata från servern */
@@ -22,11 +22,23 @@ async function fetchCourses() {
         /* Hämtad data sparas i variabeln allCourses */
         allCourses = data;
 
-        /* Rensar tabellen */
+        /* Skickar alla hämtade kurser till render-funktionen för visning */
+        renderCourses(allCourses);
+
+        /* Fångar eventuella fel */
+    } catch (error) {
+        console.error("Något gick fel vid fetch", error);
+    }
+}
+
+/* Skapar en egen funktion för att lista kurser och skriva ut dem till DOM */
+function renderCourses(courses) {
+    
+    /* Rensar tabellen */
         tbody.innerHTML = "";
 
-        /* Loopar genom alla kursen och lägger till dom i tabellen */
-        allCourses.forEach((course) => {
+        /* Loopar genom alla kurser och lägger till dom i tabellen */
+        courses.forEach((course) => {
 
             /* Skapar en tabellrad */
             const tr = document.createElement("tr");
@@ -51,12 +63,8 @@ async function fetchCourses() {
 
         });
 
-        console.log("Alla kurser visas i tabellen");
+    console.log(`Visar ${courses.length} kurser i tabellen`);
 
-        /* Fångar eventuella fel */
-    } catch (error) {
-        console.error("Något gick fel vid fetch", error);
-    }
 }
 
 /* Anropar funktionen när sidan laddas */
