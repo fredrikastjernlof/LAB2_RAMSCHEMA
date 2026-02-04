@@ -34,7 +34,7 @@ Följande tekniker har använts under arbetets gång:
 - Git & GitHub
 
 ## Publicering 💻
-
+https://laboration2-ramschema.onrender.com/
 
 ## Detta tar jag med mig från uppgiften ✅ 🙌
 Uppgiften har gett mig bra repetition i hur fetch-anrop fungerar i JavaScript. Jag har använt asynkrona funktioner tidigare, men här fick jag arbeta mer konkret med async/await, fetch och try/catch i samma flöde. Jag har också blivit säkrare på hur man filtrerar och sorterar data och sedan uppdaterar innehållet på sidan utifrån användarens input.

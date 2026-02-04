@@ -13,34 +13,43 @@
 
 <body>
   <a href="#main" class="skip-link">Hoppa till huvudinnehåll</a>
-  <main id="main">
-    <header>
-      <h1>Ramschema – Webbutveckling</h1>
-      <p id="status"></p>
-    </header>
-    <section class="panel">
-      <div class="controls">
-        <label for="search">Sök kurs:</label>
-        <input id="search" type="text" placeholder="Sök kurskod eller kursnamn">
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">
-              <button type="button" data-sort="code">Kurskod</button>
-            </th>
-            <th scope="col">
-              <button type="button" data-sort="coursename">Kursnamn</button>
-            </th>
-            <th scope="col">
-              <button type="button" data-sort="progression">Progression</button>
-            </th>
-          </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
-    </section>
-  </main>
+  <div class="container">
+    <main id="main">
+      <header>
+        <h1>Ramschema</h1>
+        <p class="subtitle">Webbutvecklingsprogrammet</p>
+        
+      </header>
+      <section class="panel">
+        <div class="controls">
+          <label for="search">Sök kurs:</label>
+          <input id="search" type="text" placeholder="Sök kurskod eller kursnamn">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">
+                <button type="button" data-sort="code">Kurskod</button>
+              </th>
+              <th scope="col">
+                <button type="button" data-sort="coursename">Kursnamn</button>
+              </th>
+              <th scope="col">
+                <button type="button" data-sort="progression">Progression</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <p id="status"></p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 Fredrika Stjernlöf</p>
+      <p> Denna webbplats är skapad som en del i kursen Frondtend-baserad webbutveckling
+        på Mittuniversitetet i Sundsvall.</p>
+    </footer>
+  </div>
   <script type="module" src="/src/js/main.js"></script>
 </body>
 

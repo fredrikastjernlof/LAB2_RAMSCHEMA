@@ -25,7 +25,7 @@ body {
     top: 0;
 }
 
-#main {
+.container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem 1rem;
@@ -50,10 +50,18 @@ h1{
     word-break: break-word;
 }
 
+.subtitle {
+  margin: 0.2rem 0 0.6rem 0;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
 #status {
-    margin: 0;
+    text-align: center;
+    margin-top: 2rem;
     font-size: 1rem;
-    color: #fff;
+    color: #222;
 }
 
 /* Panel runt sök och tabell */
@@ -126,3 +134,13 @@ th button {
 th button:hover {
     text-decoration: underline;
 }
+
+footer {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: #222;
+    border: 10px ridge grey;
+    text-align: center;
+}
+
