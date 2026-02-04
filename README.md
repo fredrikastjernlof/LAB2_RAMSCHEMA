@@ -1,6 +1,6 @@
-# Laboration 2 – Ramschema Webbutvecklingsprogrammet 👩🏼‍💻
+# Laboration 2 – Ramschema för Webbutvecklingsprogrammet 👩🏼‍💻
 
-I denna uppgift ska en enkel webbapplikation skapas. Den ska hämta kursdata från en extern JSON-fil och informationen ska presenteras i en tabell. Tabellen Ska kunna filtreras via sökfält och sorteras genom att klicka på rubriken för varje kolumn.
+I denna uppgift ska en enkel webbapplikation skapas. Den ska hämta kursdata från en extern JSON-fil och informationen ska presenteras i en tabell. Tabellen ska kunna filtreras via sökfält och sorteras genom att klicka på rubriken för varje kolumn.
 
 ## Syfte / mål 🏁
 

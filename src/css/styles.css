@@ -73,6 +73,11 @@ h1 {
 
 }
 
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 /* Sök */
 .controls {
     margin-bottom: 0.75rem;
