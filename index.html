@@ -4,31 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/css/styles.css">
   <title>LAB2-RAMSCHEMA</title>
 </head>
 
 <body>
-  <div id="app">
+  <a href="#main" class="skip-link">Hoppa till huvudinnehåll</a>
+  <main id="main">
     <header>
-      <H1>Ramchema – Webbutveckling</H1>
+      <h1>Ramschema – Webbutveckling</h1>
       <p id="status"></p>
     </header>
     <section class="panel">
       <div class="controls">
         <label for="search">Sök kurs:</label>
-        <input id="search" type="text" placeholder="Sök">
+        <input id="search" type="text" placeholder="Sök kurskod eller kursnamn">
       </div>
       <table>
         <thead>
           <tr>
-            <th>
+            <th scope="col">
               <button type="button" data-sort="code">Kurskod</button>
             </th>
-            <th>
+            <th scope="col">
               <button type="button" data-sort="coursename">Kursnamn</button>
             </th>
-            <th>
+            <th scope="col">
               <button type="button" data-sort="progression">Progression</button>
             </th>
           </tr>
@@ -36,7 +40,7 @@
         <tbody id="tbody"></tbody>
       </table>
     </section>
-  </div>
+  </main>
   <script type="module" src="/src/js/main.js"></script>
 </body>
 

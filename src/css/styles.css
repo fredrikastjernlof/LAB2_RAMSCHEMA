@@ -1,96 +1,128 @@
 /* Grundinställningar */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f4;
-  color: #222;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-wrap: anywhere;
+    background-color: #000000;
+    color: #fff;
 }
 
-/* Wrapper */
-#app {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px 12px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+#main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
 /* Header */
 header {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: #222;
+    border: 10px ridge grey;
 }
 
 
-h1 {
-  margin: 0 0 0.4rem 0;
+h1{
+    margin: 0 0 0.4rem 0;
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    overflow-wrap: anywhere; 
+    word-break: break-word;
 }
 
 #status {
-  margin: 0;
-  font-size: 1rem;
-  color: #555;
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
 }
 
 /* Panel runt sök och tabell */
 .panel {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    color: #222;
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 10px ridge grey;
+
 }
 
 /* Sök */
 .controls {
-  margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 label {
-  display: block;
-  margin: 0 0 0.3rem 0.3rem;
-  font-weight: bold;
+    display: block;
+    margin: 0 0 0.3rem 0.3rem;
+    font-weight: bold;
 }
 
 input[type="text"] {
-  width: 100%;
-  max-width: 300px;
-  font-size: 0.9rem;
-  padding: 0.5rem;
-  border: 1px solid #8d8d8d;
-  border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    background-color: #ffffff;
+    color: #222222;
+    border: 1px solid #777777;
+    border-radius: 5px;
 }
 
 /* Tabell */
 table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
 thead th {
-  text-align: left;
-  border-bottom: 2px solid #ccc;
-  padding: 0.5rem;
+    text-align: left;
+    border-bottom: 2px solid #ccc;
+    padding: 0.5rem;
 }
 
 tbody td {
-  padding: 0.5rem;
-  border-bottom: 1px solid #ddd;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+th, 
+td { 
+    overflow-wrap: anywhere; 
+    word-break: break-word; 
 }
 
 /* Hover-effekt */
 tbody tr:hover {
-  background-color: #f0f0f0;
+    background-color: #f0f0f0;
 }
 
 /* Sorteringsknappar */
 th button {
-  all: unset;
-  cursor: pointer;
-  font-weight: bold;
+    all: unset;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 th button:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
