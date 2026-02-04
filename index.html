@@ -17,30 +17,32 @@
     <main id="main">
       <header>
         <h1>Ramschema</h1>
-        <p class="subtitle">Webbutvecklingsprogrammet</p>
+        <h2 class="subtitle">Webbutvecklings&shy;programmet</h2>
       </header>
       <section class="panel">
-        <h2 class="section-title">Kurslista</h2>
+        <h3 class="section-title">Kurslista</h3>
         <div class="controls">
           <label for="search">Sök kurs:</label>
           <input id="search" type="text" placeholder="Sök kurskod eller kursnamn">
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">
-                <button type="button" data-sort="code">Kurskod</button>
-              </th>
-              <th scope="col">
-                <button type="button" data-sort="coursename">Kursnamn</button>
-              </th>
-              <th scope="col">
-                <button type="button" data-sort="progression">Progression</button>
-              </th>
-            </tr>
-          </thead>
-          <tbody id="tbody"></tbody>
-        </table>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">
+                  <button type="button" data-sort="code">Kurskod</button>
+                </th>
+                <th scope="col">
+                  <button type="button" data-sort="coursename">Kursnamn</button>
+                </th>
+                <th scope="col">
+                  <button type="button" data-sort="progression">Progression</button>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
         <p id="status"></p>
       </section>
     </main>
